@@ -1,0 +1,6 @@
+waitproc
+waitproc-*.tar.gz
+waitproc.1
+*.html
+waitproc.1.xml
+waitproc.o
