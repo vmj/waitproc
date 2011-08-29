@@ -16,16 +16,16 @@
  * You should have received a copy of the GNU General Public License along
  * with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
-#include <sys/types.h> /* for DIR */
-#include <stdint.h>    /* for uint8_t */
-#include <dirent.h>    /* for opendir()/closedir() */
-#include <stdlib.h>    /* for malloc() */
-#include <string.h>    /* for strlen() */
-#include <stdio.h>     /* for sprintf() */
-#include <unistd.h>    /* for sleep() */
-#include <error.h>     /* for error() */
-#include <errno.h>     /* for errno */
-#include <argp.h>      /* for argp stuff */
+#include <sys/types.h>          /* for DIR */
+#include <stdint.h>             /* for uint8_t */
+#include <dirent.h>             /* for opendir()/closedir() */
+#include <stdlib.h>             /* for malloc() */
+#include <string.h>             /* for strlen() */
+#include <stdio.h>              /* for sprintf() */
+#include <unistd.h>             /* for sleep() */
+#include <error.h>              /* for error() */
+#include <errno.h>              /* for errno */
+#include <argp.h>               /* for argp stuff */
 
 /* See info libc -> Argp Global Variables */
 
@@ -89,7 +89,7 @@ static error_t
 handle_option(int key, char *arg, struct argp_state *state)
 {
         error_t err = 0;
-        config_t *config = (config_t *)state->input;
+        config_t *config = (config_t *) state->input;
         unsigned long int value = 0;
         char *end = NULL;
 
@@ -103,7 +103,7 @@ handle_option(int key, char *arg, struct argp_state *state)
                         error(EXIT_FAILURE, EINVAL, arg);
                 if (value > UINT8_MAX)
                         error(EXIT_FAILURE, ERANGE, arg);
-                config->interval = (uint8_t)value;
+                config->interval = (uint8_t) value;
                 break;
         case ARGP_KEY_ARG:
                 config->pid = arg;
