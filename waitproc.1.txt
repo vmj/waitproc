@@ -1,0 +1,58 @@
+waitproc(1)
+===========
+
+NAME
+----
+waitproc - Wait for an arbitrary process
+
+SYNOPSIS
+--------
+[verse]
+'waitproc' [OPTION...] PID
+
+DESCRIPTION
+-----------
+waitproc waits for an arbitrary process to complete.
+
+OPTIONS
+-------
+waitproc accepts following options.
+
+-i SECONDS::
+--interval SECONDS::
+        The interval, in seconds, how often to check wether the
+        process is still in progress.  Default is 5 seconds.
+
+-V::
+--version::
+        Print version and exit with zero status.
+
+--usage::
+        Print usage and exit with zero status.
+
+--help::
+        Print help and exit with zero status.
+
+EXIT STATUS
+-----------
+Normally, the exit status is zero.  In case of error, an error is
+printed to stardard error stream and the exit status is non-zero.
+
+AUTHOR
+------
+Original author and current maintainer: mailto:vmj@linuxbox.fi[Mikko Värri].
+
+COPYRIGHT
+---------
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at
+your option) any later version.
+
+This program is distributed in the hope that it will be useful, but
+WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
