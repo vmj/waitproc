@@ -41,7 +41,7 @@ indent:
 dist-internal:
 	-@rm -rf $(NAME)-$(VERSION) $(NAME)-$(VERSION).tar.gz 2>/dev/null || true
 	@mkdir $(NAME)-$(VERSION)
-	@cp -r LICENSE.txt Makefile $(NAME).c $(NAME).1.txt README.rst $(NAME)-$(VERSION)/
+	@cp -r LICENSE.txt Makefile $(NAME).c $(NAME).1.txt README.adoc $(NAME)-$(VERSION)/
 	@tar czf $(NAME)-$(VERSION).tar.gz $(NAME)-$(VERSION)
 	@rm -rf $(NAME)-$(VERSION)
 
@@ -64,8 +64,8 @@ $(NAME).1: $(NAME).1.xml
 
 # HTML Documentation
 
-index.html: README.rst
-	rst2html.py $< $@
+index.html: README.adoc
+	asciidoc -b html -o $@ $<
 
 $(NAME).1.html: $(NAME).1.txt
 	asciidoc -b html -d manpage -o $@ $<
